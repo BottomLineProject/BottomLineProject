@@ -37,13 +37,13 @@ $(function() {
 				$form.removeClass('invalid');
 			}, 1500);
 		} else {
-			// do magic
 			var subscribersRef = new Firebase('https://bottomline.firebaseio.com/subscribers');
 			var created = new Date();
 			var email = $input.val();
 			subscribersRef.push({email: email, created: created.toString()});
 
 			$('.thanks').fadeIn(500);
+			$input.val('');
 		}
 	});
 });
